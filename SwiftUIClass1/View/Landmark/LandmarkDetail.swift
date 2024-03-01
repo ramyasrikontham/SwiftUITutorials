@@ -20,10 +20,12 @@ struct LandmarkDetail: View {
         @Bindable var modelData = modelData
 
         VStack {
-            MapView().frame(height: 300)
+            MapView(coordinate: landmark.locationCoordinate)
+                          .frame(height: 300)
             
-            CircleImage().offset(y: -130)
-                .padding(.bottom, -130)
+            CircleImage(image: landmark.image)
+                        .offset(y: -130)
+                        .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
                            HStack {
